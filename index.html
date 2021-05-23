@@ -8,7 +8,8 @@
     <title>Shopping Cart</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -35,14 +36,8 @@
                                 class="border">1</span><button id="increase-1">+</button> </div>
                         <div class="col">&euro; <span id="price-one"> 40.00</span> <span class="close"
                                 id="item-one">&#10005;</span></div>
-                        <div>
-
-                            <svg aria-label="Fil d’activité" class="_8-yf5 " fill="#262626" height="22"
-                                viewBox="0 0 48 48" width="22">
-                                <path
-                                    d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z">
-                                </path>
-                            </svg>
+                        <div style="color:gray" id="likeButton-one">
+                            <a href=""><i class="fa fa-heart"></i></a>
                         </div>
                     </div>
 
@@ -64,14 +59,9 @@
                         <div class="col">&euro;<span id="price-two"> 20.00</span> <span class="close"
                                 id="item-two">&#10005;</span></div>
                     </div>
-                    <div>
+                    <div style="color:gray;" >
 
-                        <svg id="heart-one" aria-label="Fil d’activité" class="_8-yf5 " fill="#262626" height="22"
-                            viewBox="0 0 48 48" width="22">
-                            <path
-                                d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z">
-                            </path>
-                        </svg>
+                         <a href=""  id="likeButton-two" ><i class="fa fa-heart"></i></a>
                     </div>
                 </div>
                 <div class="row border-top border-bottom" id="childElement-three">
@@ -86,14 +76,9 @@
                         <div class="col">&euro;<span id="price-Three"> 30.00</span> <span class="close"
                                 id="item-three">&#10005;</span></div>
                     </div>
-                    <div>
+                    <div  style="color:gray;" id="likeButton-three">
 
-                        <svg aria-label="Fil d’activité" class="_8-yf5 " fill="#262626" height="22" viewBox="0 0 48 48"
-                            width="22">
-                            <path
-                                d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z">
-                            </path>
-                        </svg>
+                        <a href=""><i class="fa fa-heart"></i></a>
                     </div>
                 </div>
                 <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
@@ -105,7 +90,7 @@
                 <hr>
                 <div class="row">
                     <div class="col" style="padding-left:0;">ITEMS 3</div>
-                    <div class="col text-right">&euro; 132.00</div>
+                    <div class="col text-right">&euro;<span id="sum">90</span> </div>
                 </div>
                 <form>
                     <p>SHIPPING</p> <select>

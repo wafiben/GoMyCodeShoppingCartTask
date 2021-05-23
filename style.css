@@ -200,3 +200,14 @@ body{background: #333;}
 
 ::-moz-selection { background: transparent;}
 ::selection {background: transparent;}
+body{
+    background-color: gray;
+}
+a {
+    text-decoration: none;
+    
+}
+.fa
+{
+    color:gray;
+}

@@ -11,25 +11,24 @@ var parentElementArticle=document.getElementsByClassName("col-md-8 cart");
 var childElementArticleOne=document.getElementById('childElement-one');
 var childElementArticleTwo=document.getElementById('childElement-two');
 var childElementArticleThree=document.getElementById('childElement-three');
-var likeButton=document.getElementById('heart-one');
+var likeButtonOne=document.getElementById('likeButton-one');
+var likeButtonTwo=document.getElementById('likeButton-two');
+var likeButtonThree=document.getElementById('likeButton-three');
 var buttonDeleteOne=document.getElementById('item-one');
 var buttonDeleteTwo=document.getElementById('item-two');
 var buttonDeleteThree=document.getElementById('item-three');
 var priceOne=document.getElementById('price-one');
 var priceTwo=document.getElementById('price-two');
 var priceThree=document.getElementById('price-Three');
+var sumOfItems=document.getElementById('sum');
+var articlePriceOne=40;
+var articlePriceTwo=20;
+var articlePriceThree=30;
+console.log(quantityOfItemsThree);
+console.log(buttonOfIncreaseThree);
 
 
-console.log(buttonDeleteOne);
-console.log(childElementArticleOne);
-
-console.log(buttonDeleteThree);
-console.log(childElementArticleThree);
-
-console.log( 'price three '+priceThree);
-
-
-function increaseQuantityOfItems(element,price)
+function increaseQuantityOfItems(element,price, articlePrice)
 {
    
 
@@ -39,58 +38,95 @@ i++;
 element.innerHTML=i;
 
 var p=parseInt(price.innerHTML);
-p=p*i;
-price.innerHTML=p+'.00'
+p+=articlePrice;
+price.innerHTML=p;
 
 
 
-console.log(i)
-console.log(p);
+
 }
 
 function IncreaseItemOne()
+
 {
-    increaseQuantityOfItems(quantityOfItemsOne,priceOne);
+  
+  
+    increaseQuantityOfItems(quantityOfItemsOne,priceOne,articlePriceOne);
+    
+    var sum= parseInt(sumOfItems.innerHTML)+articlePriceOne;
+    sumOfItems.innerHTML=sum;
+
+  
+ 
+ 
+ console.log(sum);
+
     
 }
 function IncreaseItemTwo()
 {
-    increaseQuantityOfItems(quantityOfItemsTwo,priceTwo);
+    increaseQuantityOfItems(quantityOfItemsTwo,priceTwo,articlePriceTwo);
+    var sum= parseInt(sumOfItems.innerHTML)+articlePriceTwo;
+    sumOfItems.innerHTML=sum;
 }
 function IncreaseItemThree()
 {
-    increaseQuantityOfItems(quantityOfItemsThree,priceThree);
-}
-function decreaseQuantityOfItems(element,price)
-{
+    increaseQuantityOfItems(quantityOfItemsThree,priceThree,articlePriceThree);
+    var sum= parseInt(sumOfItems.innerHTML)+articlePriceThree;
+    sumOfItems.innerHTML=sum;
+    
   
+}
+function decreaseQuantityOfItems(element,price,articlePrice)
+{
   var i=parseInt(element.innerHTML);
-  if(i>0)
+  var p=parseInt(price.innerHTML);
+  if(i>1)
   {
-    i--;
-    element.innerHTML=i;
-    var p=parseInt(price.innerHTML);
-    p=p*i;
-    price.innerHTML=p+'.00'
-  }
-  else
-  {
-   i=0 ;
-  }
+
+  i--;
+  
+  element.innerHTML=i;
+  
+ 
+  p-=articlePrice;
+  price.innerHTML=p;
+}
+  
+ 
   
 }
 
 function decreaseItemOne ()
 {
-    decreaseQuantityOfItems(quantityOfItemsOne,priceOne);
+  decreaseQuantityOfItems(quantityOfItemsOne,priceOne,articlePriceOne);
+  console.log(parseInt(quantityOfItemsOne.innerHTML))
+  if(parseInt(quantityOfItemsOne.innerHTML)>0)
+  {
+    
+    var sum= parseInt(sumOfItems.innerHTML)-articlePriceOne;
+    sumOfItems.innerHTML=sum;
+  }
+  
+  
+    
+    
 }
 function decreaseItemTwo ()
 {
-    decreaseQuantityOfItems(quantityOfItemsTwo,priceTwo);
+  decreaseQuantityOfItems(quantityOfItemsTwo,priceTwo,articlePriceTwo);
+  if(parseInt(quantityOfItemsOne.innerHTML)>1)
+    {
+      var sum= parseInt(sumOfItems.innerHTML)-articlePriceTwo;
+      sumOfItems.innerHTML=sum;
+    }
+    
+    
+   
 }
 function decreaseItemThree ()
 {
-    decreaseQuantityOfItems(quantityOfItemsThree,priceThree);
+    decreaseQuantityOfItems(quantityOfItemsThree,priceThree,articlePriceThree);
 }
 buttonOfIncreaseOne.addEventListener("click",IncreaseItemOne);
 buttonOfIncreaseTwo.addEventListener("click",IncreaseItemTwo);
@@ -103,33 +139,57 @@ buttonOfIncreaseThree.addEventListener("click",decreaseItemThree);
 function deleteElement(element)
 {
   element.remove();
+ 
+
 }
   function deleteArticleOne()
   {
-    deleteElement(childElementArticleOne);
-    alert('hey');
+    var  Total=sumOfItems.innerHTML;
+    Total-=parseInt(priceOne.innerHTML);
+    sumOfItems.innerHTML=Total.toString();
+    
+    deleteElement(childElementArticleOne); 
+   
+
     
   }
   function deleteArticleTwo()
   {
-    
+    var  Total=sumOfItems.innerHTML;
+    Total-=parseInt(priceTwo.innerHTML);
+    sumOfItems.innerHTML=Total.toString();
+    console.log(Total)
+    console.log( sumOfItems);
+  
     deleteElement(childElementArticleTwo);
   }
   function deleteArticleThree()
   {
-  
+    var  Total=sumOfItems.innerHTML;
+    Total-=parseInt(priceThree.innerHTML);
+    sumOfItems.innerHTML=Total.toString();
+   
     deleteElement(childElementArticleThree);
+   
   }
   function likeArticle()
   {
-    likeButton.style.color='blue';
-    alert('cliqué')
+    //likeButtonOne.setAttribute("style", "color:red");
+
+    likeButtonTwo.removeAttribute('style');
+    likeButtonTwo.setAttribute('style','backgroundColor:red')
+
+    alert('cliqué');
+
   }
 
   console.log(parentElementArticle);
   buttonDeleteOne.addEventListener("click",deleteArticleOne);
   buttonDeleteTwo.addEventListener("click",deleteArticleTwo);
   buttonDeleteThree.addEventListener("click",deleteArticleThree);
-  likeButton.addEventListener("click",likeArticle);
+  likeButtonOne.addEventListener("click",likeArticle);
+  likeButtonTwo.addEventListener("click",likeArticle);
+  likeButtonThree.addEventListener("click",likeArticle);
+  
   
 
